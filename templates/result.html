@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detection Result</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to right, #e6f1f5, #cce0e4);
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .result-box {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+      max-width: 500px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    h2 {
+      color: #2c5555;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #def1eb;
+      color: #195d4f;
+      font-weight: bold;
+      border-radius: 25px;
+    }
+
+    form {
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 12px 24px;
+      background-color: #4b7d84;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #3d686d;
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+  <div class="result-box">
+    <h2>Detection Result</h2>
+    <div class="tag">Prediction: {{ prediction }}</div>
+    <img src="/{{ image_file }}" alt="Uploaded Image"/>
+    <form action="/" method="get">
+      <button type="submit">Test With Another Image</button>
+    </form>
+  </div>
+</body>
+</html>
